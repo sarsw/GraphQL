@@ -25,7 +25,7 @@ namespace CommanderGQL
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(_cfg.GetConnectionString("CommandConStr")));
+            services.AddPooledDbContextFactory<AppDbContext>(opt => opt.UseSqlServer(_cfg.GetConnectionString("CommandConStr")));
             services
                 .AddGraphQLServer() /* adds the server!*/
                 .AddQueryType<Query>();
