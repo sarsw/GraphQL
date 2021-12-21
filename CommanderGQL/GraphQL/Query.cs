@@ -9,6 +9,7 @@ namespace CommanderGQL.GraphQL
     public class Query
     {
         [UseDbContext(typeof(AppDbContext))]// gets a DBContext from the pool and returns the context to the pool after the query completes
+        [UseProjection]
         public IQueryable<Platform> GetPlatform([ScopedService] AppDbContext context)     // using Service from the HotChoc framework
         {
             return context.Platforms;       // remember a scopedservice is created once per client request
