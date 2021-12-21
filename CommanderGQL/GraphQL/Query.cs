@@ -14,5 +14,12 @@ namespace CommanderGQL.GraphQL
         {
             return context.Platforms;       // remember a scopedservice is created once per client request
         }
+
+        [UseDbContext(typeof(AppDbContext))]// gets a DBContext from the pool and returns the context to the pool after the query completes
+        [UseProjection]
+        public IQueryable<Command> GetCommand([ScopedService] AppDbContext context)
+        {
+            return context.Commands;
+        }
     }
 }
