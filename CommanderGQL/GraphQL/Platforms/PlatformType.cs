@@ -22,7 +22,7 @@ namespace CommanderGQL.GraphQL.Platforms
         private class Resolvers     // this heavy lifting is done by the UseProjection in annotation code-first
         {
             
-            public IQueryable<Command> GetCommands(Platform platform, [ScopedService] AppDbContext context)
+            public IQueryable<Command> GetCommands( [Parent] Platform platform, [ScopedService] AppDbContext context)
             {
                 return context.Commands.Where(p => p.PlatformId == platform.Id);
             }
