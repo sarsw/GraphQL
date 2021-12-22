@@ -28,7 +28,9 @@ namespace CommanderGQL
                 .AddGraphQLServer() /* adds the server!*/
                 .AddQueryType<Query>()
                 .AddType<PlatformType>()
-                .AddType<GraphQL.Commands.CommandType>();
+                .AddType<GraphQL.Commands.CommandType>()
+                .AddFiltering()
+                .AddSorting();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)      // the service container provides IWebHostEnvironment, IHostEnvironment, IConfiguration DI
