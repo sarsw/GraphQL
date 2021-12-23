@@ -27,6 +27,7 @@ namespace CommanderGQL
             services
                 .AddGraphQLServer() /* adds the server!*/
                 .AddQueryType<Query>()
+                .AddMutationType<Mutation>()
                 .AddType<PlatformType>()
                 .AddType<GraphQL.Commands.CommandType>()
                 .AddFiltering()
