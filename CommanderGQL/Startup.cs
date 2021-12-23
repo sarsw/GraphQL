@@ -28,10 +28,12 @@ namespace CommanderGQL
                 .AddGraphQLServer() /* adds the server!*/
                 .AddQueryType<Query>()
                 .AddMutationType<Mutation>()
+                .AddSubscriptionType<Subscription>()
                 .AddType<PlatformType>()
                 .AddType<GraphQL.Commands.CommandType>()
                 .AddFiltering()
-                .AddSorting();
+                .AddSorting()
+                .AddInMemorySubscriptions();    // to track the subscribers in memory, a production deployment might use a persistence layer
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)      // the service container provides IWebHostEnvironment, IHostEnvironment, IConfiguration DI
@@ -40,6 +42,8 @@ namespace CommanderGQL
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseWebSockets();
 
             app.UseRouting();
 
