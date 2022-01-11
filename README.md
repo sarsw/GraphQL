@@ -9,4 +9,4 @@ I like the way the GraphQL api has filtering and sorting and using the Hotchocol
 
 Documenting the api proved cleaner in the code-first approach rather than marking-up the model with annotations.
 
-![Architecture](./CommanderGQL/Architecture.png)
+![Architecture](./CommanderGQL/architecture.png)
