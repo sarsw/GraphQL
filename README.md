@@ -8,3 +8,5 @@ The MSSQL image was spun up in docker using docker compose.
 I like the way the GraphQL api has filtering and sorting and using the Hotchocolate package gave lots of free functionality.  I also used newer packages than the guide so had to fix some code as I went along to accomodate the new packages.
 
 Documenting the api proved cleaner in the code-first approach rather than marking-up the model with annotations.
+
+![Architecture](./CommanderGQL/Architecture.png)
